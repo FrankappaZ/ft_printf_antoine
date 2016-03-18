@@ -1,0 +1,11 @@
+
+a géré :
+ %% as % --> parsing if (%) if +1 (%) 
+ # q
+
+	%s --> char*
+	%f --> float
+	%d --> int
+	%c --> unsigned char
+	%x --> unsiged int
+	
