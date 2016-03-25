@@ -25,7 +25,7 @@ static char	*strjoin(char *signe, char *str)
 	i = ft_strlen(str) + ft_strlen(signe);
 	result = ft_strnew(i);
 	if (!result)
-		return
+		return (NULL);
 
 }
 
@@ -48,7 +48,7 @@ static char	*valtostr(unsigned long value, unsigned int base)
 	return (str);
 }
 
-char	*ft_converteur(long float test)
+char	*ft_converteur()
 {
 	char	*result;
 

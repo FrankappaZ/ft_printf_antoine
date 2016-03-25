@@ -18,14 +18,15 @@ typedef union u_number
 	long int		li;
 	long double		ld;
 	long long		ll;
-
 }t_number;
 
 typedef struct s_arglist
 {
-	t_number number;
-	char *flags;
-	s_arglist *next;
+	t_number		number;
+	char			*flags;
+	unsigned int	field;
+	unsigned int	precision;
+	s_arglist		*next;
 }t_arglist;
 
 char *ft_itoh(unsigned int value);
