@@ -27,7 +27,8 @@ int main(int a, char **b)
 	char *test;
 	test = ft_itoh(i);
 //	foo(&test, 1, b[1]);
-	printf("%x ey !\n", i);
-	printf("%s ey !", test);
+	printf("%d\n", 12.34, 56.78, 90.12, 42);
+	printf("%u ey !\n", 45000000000000);
+	printf("1234567890");
 	return (0);
 }
