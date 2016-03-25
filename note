@@ -1,6 +1,72 @@
 
+
+
+SYNTAXE	:
+	%[FLAGS][MIN_FIELD].[PRECISION][TYPE]
+
+
+
+[xx] = number
+[t] = type "f, c, s, d, o, p, %, S, D, i, u"
+
 a géré :
- %% as % --> parsing if (%) if +1 (%) 
+	%			==>new entry
+	%[t][xx.xx]	==>format
+
+	with %[xx.xx]c :
+		%c			-->	print char
+		%.c			==	%c
+		%[xx]c		-->	padding left [xx] - char
+		%.[xx]c		==	%c
+		%[xx].c		==	%[xx]c
+		%[xx].[xx]c	==	%[xx]c
+
+	with %[xx.xx]s :
+		%s			-->	print char * 
+		%.s			--	nothing
+		%[xx]s		-->	if [xx] > strlen ? padding left - nb char : print str
+		%.[xx]s		-->	if [xx] < strlen ? print [xx]char : print str
+		%[xx].s		-->	padding left [xx] + %.s
+		%[xx].[xx]s	-->	padding left [xx.] - [.xx] char afficher
+
+	with %[xx.xx]f :
+		%f			-->	print float 6 chiffre apres la virgule
+		%.f			-->	arrondi, (0.5 == 0 && 0.51 == 1)
+		%[xx]f		-->	if [xx] > strlen ? padding left - nb digit : print float
+		%.[xx]f		-->	nbr of decimal (! comportement indeterminer)
+		%[xx].f		==>	(%[xx]f) + (%.f)
+		%[xx].[xx]f	==>	(%[xx]f) + (%.[xx]f)
+
+	with %[xx.xx]d :
+		%d			-->	print int
+		%.d			==>	(%d)
+		%[xx]d		-->	padding left - nb digit
+		%.[xx]d		-->	add [xx] 0 (left) - nb digit
+		%[xx].d		==>	(%[xx]d)
+		%[xx].[xx]d	==>	(%.[xx]d) + (%[xx]d)
+
+	with %[xx.xx]o :
+		%o			--> print unsigned int to octal
+		%O			--> print unsigned long to octal
+
+
+	with %%			:
+		%%			--> echap write %
+
+	with %[xx.xx]p :
+		%p			-->	print pointeur adress in hexa
+		%.p			==>	(%p)
+		%[xx]p		-->	padding left - nb digit
+		%.[xx]p		-->	add [xx] 0 (left) - nb digit
+		%[xx].p		==>	(%[xx]p)
+		%[xx].[xx]p	==>	(%.[xx]p) + (%[xx]p)
+
+	with %[xx.xx]S	:	is %s with wchar_t type
+	with %[xx.xx]D	:	is %d with long type (original : %ld)
+	with %[xx.xx]i	:	same as %d (!= scanf)
+	with %[xx.xx]u	:	is %d unsigned
+
+%% as % --> parsing if (%) if +1 (%) 
  # q
 
 	%s --> char*
