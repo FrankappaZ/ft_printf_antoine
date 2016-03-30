@@ -6,7 +6,7 @@
 /*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/28 11:08:58 by abureau           #+#    #+#             */
-/*   Updated: 2016/03/28 15:32:30 by abureau          ###   ########.fr       */
+/*   Updated: 2016/03/30 14:40:11 by abureau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <unistd.h>
 # include <wchar.h>
 # define FIELD_MASK 0x1F
+
+typedef unsigned long long u64;
 
 typedef union		u_number
 {
@@ -48,8 +50,11 @@ typedef struct		s_arglist
 	unsigned short	blank;
 	unsigned int	field;
 	unsigned int	precision;
-	s_arglist		*next;
+	struct s_arglist		*next;
 }					t_arglist;
 
+char				*ft_lltoabase(u64 value, unsigned int base, int signe);
 char				*ft_itoh(unsigned int value);
+
+
 #endif

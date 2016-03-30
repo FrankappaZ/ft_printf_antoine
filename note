@@ -7,7 +7,7 @@ SYNTAXE	:
 
 
 [xx] = number
-[t] = type "f, c, s, d, o, p, %, S, D, i, u"
+[t] = type "f, c, s, d, o, p, %, S, D, i, u, O,U ,x ,X, C "
 
 a géré :
 	%			==>new entry
@@ -65,7 +65,10 @@ a géré :
 	with %[xx.xx]D	:	is %d with long type (original : %ld)
 	with %[xx.xx]i	:	same as %d (!= scanf)
 	with %[xx.xx]u	:	is %d unsigned
-
+	with %[xx.xx]U	:	is %d unsigned long
+	with %[xx.xx]x	:	is convert to hexa		# = 0x
+	with %[xx.xx]X	:	is %x long
+	
 %% as % --> parsing if (%) if +1 (%) 
  # q
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_converteur.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/28 10:22:20 by abureau           #+#    #+#             */
+/*   Updated: 2016/03/30 14:20:26 by abureau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "ft_printf.h"
 #include "libft/includes/libft.h"
@@ -26,7 +38,7 @@ static char	*strjoin(char *signe, char *str)
 	result = ft_strnew(i);
 	if (!result)
 		return (NULL);
-
+	return (result);
 }
 
 static char	*valtostr(unsigned long value, unsigned int base)
@@ -51,8 +63,6 @@ static char	*valtostr(unsigned long value, unsigned int base)
 char	*ft_converteur()
 {
 	char	*result;
-
-	
 
 	return (result);
 }

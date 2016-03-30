@@ -4,6 +4,8 @@
 #include "ft_printf.h"
 #include <stdarg.h>
 #include <string.h> 
+#include "libft/includes/libft.h"
+
 static void foo(char **str, int nbrarg, ...)
 {
 	va_list ap;
@@ -25,10 +27,10 @@ int main(int a, char **b)
 	char toto[30] = "Salut";
 
 	char *test;
-	test = ft_itoh(i);
+	short nbr = 42;
+	test = ft_lltoabase((u64)nbr, 2, 0);
 //	foo(&test, 1, b[1]);
-	printf("%d\n", 12.34, 56.78, 90.12, 42);
-	printf("%u ey !\n", 45000000000000);
-	printf("1234567890");
+	ft_putstr(test);
+	printf("\n\n%lu\n", sizeof(nbr));
 	return (0);
 }
