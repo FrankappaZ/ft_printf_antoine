@@ -15,6 +15,10 @@
 # include <unistd.h>
 # include <wchar.h>
 # define FIELD_MASK 0x1F
+# define ULL_MAX ~0ULL
+# define INT_MAX ~(1<<31)
+# define INT_MIN 1<<31 
+
 
 typedef unsigned long long u64;
 

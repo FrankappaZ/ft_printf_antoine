@@ -25,12 +25,13 @@ int main(int a, char **b)
 {
 	int i = atoi(b[2]);
 	char toto[30] = "Salut";
-
 	char *test;
 	short nbr = 42;
-	test = ft_lltoabase((u64)nbr, 2, 0);
+	u64 nbtest = ULL_MAX;
+
+	
+	test = ft_lltoabase(INT_MIN, 16, 1);
 //	foo(&test, 1, b[1]);
-	ft_putstr(test);
-	printf("\n\n%lu\n", sizeof(nbr));
+	printf("INT MAX : %d\nINT MIN : %d\nbinary : %s\n", INT_MAX, INT_MIN, test);
 	return (0);
 }
