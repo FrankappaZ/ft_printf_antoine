@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <string.h> 
 #include "libft/includes/libft.h"
+#include "ft_linit.h"
 
 static void foo(char **str, int nbrarg, ...)
 {
@@ -27,11 +28,12 @@ int main(int a, char **b)
 	char toto[30] = "Salut";
 	char *test;
 	short nbr = 42;
-	u64 nbtest = ULL_MAX;
+	unsigned long nbtest = UL32_MAX;
 
 	
-	test = ft_lltoabase(INT_MIN, 16, 1);
+	test = ft_lltoabase(UL32_MAX, 16, 1);
 //	foo(&test, 1, b[1]);
-	printf("INT MAX : %d\nINT MIN : %d\nbinary : %s\n", INT_MAX, INT_MIN, test);
+	printf("INT MAX : %lu\nINT MIN : %lu\nbinary : %s\n", UL32_MAX, 4294967295UL, test);
+//	ft_printf("%iurge %3 %% %% \n %s %s %%");
 	return (0);
 }
