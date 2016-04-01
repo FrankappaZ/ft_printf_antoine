@@ -7,7 +7,6 @@ static void	getvalue(const char *str, t_desc *desc)
 	int	i;
 
 	i = 0;
-	
 }
 
 static int	strparser(const char *format, t_desc *desc)
@@ -17,11 +16,12 @@ static int	strparser(const char *format, t_desc *desc)
 
 	i = 0;
 	nbr_arg = 0;
-
 	while (format[i])
 	{
 		if (format[i] == '%')
-			(format[i + 1] == '%') ? i++ : getvalue(&format[i], desc);
+				{
+			(format[i + 1] == '%') ? i++ : get_param(&format[i], desc);
+				}
 		i++;
 	}
 	return (nbr_arg);
@@ -44,6 +44,7 @@ static int	strcount(const char *format)
 	return (nbr_arg);
 }
 */
+
 
 void	ft_printf(const char *format, ...)
 {

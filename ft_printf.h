@@ -6,7 +6,7 @@
 /*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/28 11:08:58 by abureau           #+#    #+#             */
-/*   Updated: 2016/03/31 17:52:36 by abureau          ###   ########.fr       */
+/*   Updated: 2016/04/01 16:25:56 by abureau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <wchar.h>
 # define FIELD_MASK 0x1F
+
 
 
 typedef unsigned long long u64;
@@ -78,7 +79,7 @@ typedef struct		s_desc
 
 
 
-
+void		get_param(char *c, t_desc);
 char				*ft_lltoabase(u64 value, unsigned int base, int signe);
 char				*ft_itoh(unsigned int value);
 void	ft_printf(const char *format, ...);
