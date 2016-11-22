@@ -18,11 +18,12 @@ static int		get_var(char **str, int ret, va_list val)
 	int		i;
 	t_pf	*ptf;
 
+	i = 0;
 	ptf = (t_pf*)ft_memalloc(sizeof(t_pf));
 	if (!ptf)
 		return (-1);
-	i = 0;
-	ptf->flag = get_flag(*str, &i);
+	if ((ptf->flag = get_flag(*str, &i)) < 0)
+		return (free_ptf(ptf));
 	if ((ptf->width = get_w(*str, &i, ptf, val)) < 0)
 		return (free_ptf(ptf));
 	if ((ptf->prec = get_p(*str, &i, ptf, val)) < 0)
@@ -54,7 +55,7 @@ int				print_f(char *str, va_list val)
 	int	j;
 	int	ret;
 
-	ft_inittwovar(&i, &j, &ret);
+	ft_inittwovar(&j, &ret);
 	while (*str)
 	{
 		j = 0;
