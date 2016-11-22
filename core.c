@@ -6,7 +6,7 @@
 /*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 21:41:52 by abureau           #+#    #+#             */
-/*   Updated: 2016/11/22 22:37:53 by abureau          ###   ########.fr       */
+/*   Updated: 2016/11/22 23:19:34 by abureau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static char	*add_adress(char *str)
 static char	*get_v2(char t, va_list val)
 {
 	if (t == '%' || t == 'c')
-		return (c== '%' ? ft_ctoa('%') : ft_ctoa(va_arg(val, int)));
+		return (t == '%' ? ft_ctoa('%') : ft_ctoa(va_arg(val, int)));
 	if (t == 'c')
 		return (ft_ctoa(va_arg(val, int)));
 	if (t == 'C')
