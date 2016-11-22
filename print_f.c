@@ -51,11 +51,10 @@ static int		printvar(char **str, int ret, va_list val)
 
 int				print_f(char *str, va_list val)
 {
-	int	i;
 	int	j;
 	int	ret;
 
-	ft_initthreevar(&i, &j, &ret);
+	ft_inittwovar(&i, &j, &ret);
 	while (*str)
 	{
 		j = 0;
