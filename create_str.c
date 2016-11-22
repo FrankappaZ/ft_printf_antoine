@@ -6,7 +6,7 @@
 /*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 21:41:47 by abureau           #+#    #+#             */
-/*   Updated: 2016/11/22 22:43:49 by abureau          ###   ########.fr       */
+/*   Updated: 2016/11/22 22:50:04 by abureau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int			ft_check(t_pf *ptf)
 		return (0);
 	if (ptf->type == 'p' || ptf->type == 'n' || ptf->type == 'C')
 		return (0);
-	if (ptf->type == '%' || ptf->type == 'd')
+	if (ptf->type == '%')
 		return (0);
 	return (1);
 }
