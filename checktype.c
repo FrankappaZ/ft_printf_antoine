@@ -28,7 +28,7 @@ int	check_type(char *str, int *i, t_pf *ptf)
 		ptf->type = str[*i];
 	else
 		return (-1);
-	return (0);
+	return (1);
 }
 
 int	get_type(char *str, int *i, t_pf *ptf)
@@ -57,5 +57,5 @@ int	get_type(char *str, int *i, t_pf *ptf)
 		ptf->type = str[*i];
 	else
 		return (-1);
-	return (0);
+	return (1);
 }

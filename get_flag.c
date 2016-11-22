@@ -78,25 +78,28 @@ int			gcheck_width(char *s, int *ind)
 	return (0);
 }
 
-int			get_flag(char *s, int *i)
+int			get_flag(char *s, int *ind)
 {
 	int	option;
+	int	i;
 
 	option = 0;
-	while (s[*i] == 45 || s[*i] == 43 || s[*i] == 35
-			|| s[*i] == 32 || s[*i] == '0')
+	i = *ind;
+	while (s[i] == 45 || s[i] == 43 || s[i] == 35
+			|| s[i] == 32 || s[i] == '0')
 	{
-		if (s[*i] == '-')
+		if (s[i] == '-')
 			option = option | P_M;
-		if (s[*i] == '+')
+		if (s[i] == '+')
 			option = option | P_P;
-		if (s[*i] == ' ')
+		if (s[i] == ' ')
 			option = option | P_S;
-		if (s[*i] == '#')
+		if (s[i] == '#')
 			option = option | P_H;
-		if (s[*i] == '0')
+		if (s[i] == '0')
 			option = option | P_O;
-		*i = *i + 1;
+		i++;
 	}
+	*ind = i;
 	return (option);
 }

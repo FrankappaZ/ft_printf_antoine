@@ -30,7 +30,7 @@ int			get_w(char *str, int *ind, t_pf *ptf, va_list val)
 	}
 	while (ft_isdigit(str[j]))
 		j++;
-	if (j == *ind)
+	if (j == (int)*ind)
 		return (0);
 	st = ft_strsub(str, (unsigned int)*ind, j - *ind);
 	if (!st)

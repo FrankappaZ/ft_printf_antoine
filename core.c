@@ -46,8 +46,8 @@ static char	*add_adress(char *str)
 
 static char	*get_v2(char t, va_list val)
 {
-	if (t == '%')
-		return (ft_ctoa('%'));
+	if (t == '%' || t == 'c')
+		return (c== '%' ? ft_ctoa('%') : ft_ctoa(va_arg(val, int)));
 	if (t == 'c')
 		return (ft_ctoa(va_arg(val, int)));
 	if (t == 'C')
