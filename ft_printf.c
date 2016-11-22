@@ -2,61 +2,26 @@
 #include "libft/includes/libft.h"
 #include <stdarg.h>
 
-static void	getvalue(const char *str, t_desc *desc)
+int	ft_printf(const char *format, ...)
 {
-	int	i;
+	int		return_value;
+	va_list		val;
+	char		*str;
 
-	i = 0;
-}
-
-static int	strparser(const char *format, t_desc *desc)
-{
-	int	i;
-	int	nbr_arg;
-
-	i = 0;
-	nbr_arg = 0;
-	while (format[i])
+	str = ft_strdup(format);
+	if (!str)
+		return (-1);
+	if (is_check_format(str) < 0)
 	{
-		if (format[i] == '%')
-				{
-			(format[i + 1] == '%') ? i++ : get_param(&format[i], desc);
-				}
-		i++;
+		free(str);
+		return (-1);
 	}
-	return (nbr_arg);
-}
-/*
-static int	strcount(const char *format)
-{
-	int	i;
-	int	nbr_arg;
-
-	i = 0;
-	nbr_arg = 0;
-
-	while (format[i])
-	{
-		if (format[i] == '%')
-			(format[i + 1] == '%') ? i++ : nbr_arg++;
-		i++;
-	}
-	return (nbr_arg);
-}
-*/
-
-
-void	ft_printf(const char *format, ...)
-{
-	va_list		args;
-	t_desc		desc;
-
-	ft_bzero(&desc, sizeof(t_desc));
-	desc.arglst = &args;
-	if (format)
-	{
-		va_start(*desc.arglst, format);
-		strparser(format, &desc);
-	}
-
+	free(str);
+	str = NULL;
+	va_start(val, format);
+	return_value = print_f((char*)format, val);
+	va_end(val);
+	free(str);
+	str = NULL;
+	return (return_value);
 }
