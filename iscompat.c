@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   iscompat.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/22 21:41:01 by abureau           #+#    #+#             */
+/*   Updated: 2016/11/22 21:50:34 by abureau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "d_flag.h"
 #include "ft_printf.h"
 
@@ -7,7 +19,8 @@ int	is_comp(int flag, char tp, int dot)
 		return (-1);
 	if (flag & P_H && (tp == 's' || tp == 'P' || tp == 'n' || tp == 'S'))
 		return (-1);
-	if ((tp == 'c' || tp == 'C') && (flag & P_O || flag & P_P || flag & P_H || flag & P_S))
+	if ((tp == 'c' || tp == 'C')
+			&& (flag & P_O || flag & P_P || flag & P_H || flag & P_S))
 		return (-1);
 	if ((tp == 'p') && (flag & P_O || flag & P_P || flag & P_S))
 		return (-1);

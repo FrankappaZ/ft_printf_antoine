@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/22 21:41:26 by abureau           #+#    #+#             */
+/*   Updated: 2016/11/22 21:43:22 by abureau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft/includes/libft.h"
 #include <stdarg.h>
 
 int	ft_printf(const char *format, ...)
 {
-	int		return_value;
+	int			return_value;
 	va_list		val;
 	char		*str;
 

@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ck_value.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/22 21:42:33 by abureau           #+#    #+#             */
+/*   Updated: 2016/11/22 21:44:42 by abureau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./ft_printf.h"
 #include "libft/includes/libft.h"
+
 static int	lenmod3(t_pf *prnt)
 {
 	if (prnt->type == 'i')
@@ -89,8 +102,7 @@ static int	lenmod0(t_pf *prnt)
 	return (-1);
 }
 
-
-int		ck_value(t_pf *ptf)
+int			ck_value(t_pf *ptf)
 {
 	if (ptf->len[0] && ptf->len[1])
 		return (lenmod0(ptf));
@@ -102,4 +114,3 @@ int		ck_value(t_pf *ptf)
 		return (lenmod3(ptf));
 	return (1);
 }
-

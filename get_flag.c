@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_flag.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/22 21:41:16 by abureau           #+#    #+#             */
+/*   Updated: 2016/11/22 21:48:30 by abureau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "d_flag.h"
 #include "libft/includes/libft.h"
 
-char		*g_f_len(char *str, int	*ind)
+char		*g_f_len(char *str, int *ind)
 {
 	int	i;
 
@@ -25,8 +37,8 @@ char		*g_f_len(char *str, int	*ind)
 	return (ft_strnew(0));
 }
 
-int		prev_check(char *s, int *ind, t_pf *ptf)
-{	
+int			prev_check(char *s, int *ind, t_pf *ptf)
+{
 	int	i;
 
 	i = 0;
@@ -46,7 +58,7 @@ int		prev_check(char *s, int *ind, t_pf *ptf)
 	return (i);
 }
 
-int		gcheck_width(char *s, int *ind)
+int			gcheck_width(char *s, int *ind)
 {
 	int	i;
 
@@ -66,12 +78,13 @@ int		gcheck_width(char *s, int *ind)
 	return (0);
 }
 
-int		get_flag(char *s, int *i)
+int			get_flag(char *s, int *i)
 {
 	int	option;
 
 	option = 0;
-	while (s[*i] == 45 || s[*i] == 43 || s[*i] == 35 || s[*i] == 32 || s[*i] == '0')
+	while (s[*i] == 45 || s[*i] == 43 || s[*i] == 35
+			|| s[*i] == 32 || s[*i] == '0')
 	{
 		if (s[*i] == '-')
 			option = option | P_M;
@@ -83,7 +96,7 @@ int		get_flag(char *s, int *i)
 			option = option | P_H;
 		if (s[*i] == '0')
 			option = option | P_O;
-		*i = *i + 1;		
+		*i = *i + 1;
 	}
 	return (option);
 }

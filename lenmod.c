@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lenmod.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/22 21:37:44 by abureau           #+#    #+#             */
+/*   Updated: 2016/11/22 21:37:53 by abureau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft/includes/libft.h"
 
-char	*glenmod3(t_pf *ptf, va_list val)
+char		*glenmod3(t_pf *ptf, va_list val)
 {
 	char	c;
 

@@ -1,5 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   core.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/22 21:41:52 by abureau           #+#    #+#             */
+/*   Updated: 2016/11/22 22:37:53 by abureau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft/includes/libft.h"
+
+static char	*ft_strdup_n(const char *str)
+{
+	char	*snew;
+
+	if (!str)
+		return (ft_strdup_n("(null)"));
+	snew = ft_strdup(str);
+	return (snew);
+}
 
 static char	*add_adress(char *str)
 {
@@ -48,7 +70,7 @@ char		*get_v(t_pf *ptf, int ret, va_list val)
 	if (ptf->len[0])
 		return (glenmod2(ptf, val));
 	if (ptf->type == 's')
-		return (ft_strdup(va_arg(val, char*)));
+		return (ft_strdup_n(va_arg(val, char*)));
 	if (ptf->type == 'd' || ptf->type == 'i')
 		return (ft_itoa(va_arg(val, int)));
 	if (ptf->type == 'D')
@@ -61,7 +83,7 @@ char		*get_v(t_pf *ptf, int ret, va_list val)
 		return (ft_uitoa(va_arg(val, unsigned long)));
 	if (ptf->type == 'U')
 		return (ft_ultoa(va_arg(val, unsigned long int)));
-	if (ptf->type == 'x')
+	if (ptf->type == 'x' || ptf->type == 'X')
 		return (ft_uitoa_base(va_arg(val, unsigned int), 16));
 	return (get_v2(ptf->type, val));
 }

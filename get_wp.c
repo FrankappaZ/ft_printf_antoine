@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_wp.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/22 21:41:11 by abureau           #+#    #+#             */
+/*   Updated: 2016/11/22 21:49:41 by abureau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft/includes/libft.h"
 
@@ -17,7 +29,7 @@ int			get_w(char *str, int *ind, t_pf *ptf, va_list val)
 		return (j);
 	}
 	while (ft_isdigit(str[j]))
-			j++;
+		j++;
 	if (j == *ind)
 		return (0);
 	st = ft_strsub(str, (unsigned int)*ind, j - *ind);
@@ -29,7 +41,7 @@ int			get_w(char *str, int *ind, t_pf *ptf, va_list val)
 	return ((j < 0) ? 0 : j);
 }
 
-int		get_p(char *str, int *ind, t_pf *ptf, va_list val)
+int			get_p(char *str, int *ind, t_pf *ptf, va_list val)
 {
 	int		i;
 	char	*st;
@@ -50,7 +62,7 @@ int		get_p(char *str, int *ind, t_pf *ptf, va_list val)
 			return (-1);
 		*ind += i;
 		i = ft_atoi(st);
-		free (st);
+		free(st);
 	}
 	return ((i < 0) ? 0 : i);
 }

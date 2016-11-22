@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_f.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abureau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/22 21:38:20 by abureau           #+#    #+#             */
+/*   Updated: 2016/11/22 21:39:02 by abureau          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft/includes/libft.h"
 
 static int		get_var(char **str, int ret, va_list val)
 {
-	int	i;
+	int		i;
 	t_pf	*ptf;
 
 	ptf = (t_pf*)ft_memalloc(sizeof(t_pf));
@@ -15,7 +27,7 @@ static int		get_var(char **str, int ret, va_list val)
 		return (free_ptf(ptf));
 	if ((ptf->prec = get_p(*str, &i, ptf, val)) < 0)
 		return (free_ptf(ptf));
-	if (!(ptf->len = g_f_len(*str, &i))) 
+	if (!(ptf->len = g_f_len(*str, &i)))
 		return (free_ptf(ptf));
 	if (get_type(*str, &i, ptf) < 0)
 		return (free_ptf(ptf));
