@@ -38,7 +38,7 @@ static int		get_var(char **str, int ret, va_list val)
 	return (creat_str(ptf, ptf->flag, ptf->dot));
 }
 
-static int		printvar(char **str, int ret, va_list val)
+static int		printvar(char **str int ret, va_list val)
 {
 	str[0]++;
 	if (**str == '%')
